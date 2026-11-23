@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+  <!-- PLACEHOLDER: replace with a real photo of the same car after repair (save as after.jpg and update the src). -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f6f6f6"/>
+      <stop offset="1" stop-color="#e4e4e4"/>
+    </linearGradient>
+    <linearGradient id="paint" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fb923c"/>
+      <stop offset="1" stop-color="#ea580c"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <rect y="640" width="1200" height="260" fill="#d6d6d6"/>
+  <ellipse cx="610" cy="672" rx="470" ry="26" fill="#000" opacity=".12"/>
+  <!-- repaired car body -->
+  <path d="M190 600 L235 470 Q260 430 330 420 L420 410 L505 318 Q530 292 575 290 L760 288 Q810 290 842 322 L930 415 L1000 428 Q1040 440 1040 490 L1028 548 L1005 560 L988 600 Z"
+        fill="url(#paint)" stroke="#9a3412" stroke-width="6"/>
+  <!-- glossy highlight -->
+  <path d="M260 455 Q420 430 980 448" stroke="#fff" stroke-opacity=".55" stroke-width="8" fill="none" stroke-linecap="round"/>
+  <!-- windows -->
+  <path d="M540 330 L585 312 L740 310 L770 330 L800 405 L560 405 Z" fill="#1f2937" stroke="#111827" stroke-width="5"/>
+  <path d="M600 322 L650 322 L612 395" stroke="#fff" stroke-opacity=".35" stroke-width="8" fill="none" stroke-linecap="round"/>
+  <!-- lights -->
+  <path d="M232 488 L285 482 L278 505 L226 510 Z" fill="#fff7ed"/>
+  <path d="M1000 458 L1035 466 L1030 490 L996 486 Z" fill="#dc2626"/>
+  <!-- wheels -->
+  <circle cx="345" cy="605" r="70" fill="#111"/><circle cx="345" cy="605" r="32" fill="#d4d4d4"/>
+  <circle cx="875" cy="605" r="70" fill="#111"/><circle cx="875" cy="605" r="32" fill="#d4d4d4"/>
+  <text x="600" y="790" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#525252">Placeholder: add your “after” photo</text>
+</svg>

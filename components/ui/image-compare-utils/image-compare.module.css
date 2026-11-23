@@ -1,0 +1,143 @@
+/*
+ * Styles for image-compare.tsx (not included with the pasted component).
+ * The divider's pivot, rotor and handle slot are zero-size points; motion moves and turns them.
+ */
+
+.root {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  width: 100%;
+  border-radius: var(--radius-panel, 1.625rem);
+  background: var(--surface-muted, #f5f5f5);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: pan-y; /* the page still scrolls vertically; sideways drags move the divider */
+  cursor: ew-resize;
+}
+
+.root[data-orientation="vertical"] {
+  touch-action: pan-x;
+  cursor: ns-resize;
+}
+
+.root[data-dragging] {
+  cursor: grabbing;
+}
+
+/* Both images fill the frame; the before layer is clipped by the divider. */
+.layer {
+  position: absolute;
+  inset: 0;
+}
+
+.layer > img,
+.layer > picture,
+.layer > picture > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  -webkit-user-drag: none;
+}
+
+/* Captions: before top-left, after top-right (or bottom-left when vertical). Inset matches INSET (12px). */
+.chip {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 2;
+  padding: 0.3rem 0.7rem;
+  border-radius: var(--radius-pill, 9999px);
+  background: rgb(10 10 10 / 0.55);
+  color: #fff;
+  font-size: var(--text-xs, 0.75rem);
+  font-weight: 600;
+  line-height: var(--leading-body, 1.4);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.chip[data-place="end"] {
+  left: auto;
+  right: 12px;
+}
+
+.chip[data-place="bottom"] {
+  top: auto;
+  bottom: 12px;
+}
+
+/* A full-size box whose top-left corner is moved to the divider's pivot (percent translations are of its own size, i.e. the frame). */
+.pivot {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.rotor,
+.handleSlot {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The divider line, long enough to cross the frame at any angle; the frame clips it. */
+.line {
+  position: absolute;
+  left: -1px;
+  top: -150vmax;
+  width: 2px;
+  height: 300vmax;
+  background: #fff;
+  box-shadow: 0 0 0 1px rgb(0 0 0 / 0.06), 0 0 12px rgb(0 0 0 / 0.25);
+}
+
+.handle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  translate: -50% -50%;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-pill, 9999px);
+  background: var(--surface-raised, #fff);
+  color: var(--foreground, #171717);
+  box-shadow: var(--shadow-raised, 0 6px 18px rgb(0 0 0 / 0.08), 0 1px 3px rgb(0 0 0 / 0.05));
+  border: 1px solid var(--border-strong, #d4d4d4);
+  pointer-events: auto;
+  cursor: grab;
+  outline: none;
+  transition: box-shadow var(--duration-fast, 160ms) var(--ease-standard, ease);
+}
+
+.root[data-dragging] .handle {
+  cursor: grabbing;
+}
+
+/* Keyboard focus shows a ring; focus that followed a pointer stays quiet. */
+.handle:focus-visible:not([data-quiet]) {
+  box-shadow:
+    0 0 0 3px #fff,
+    0 0 0 6px #f97316,
+    var(--shadow-raised, 0 6px 18px rgb(0 0 0 / 0.08));
+}
+
+.chevrons {
+  display: flex;
+  align-items: center;
+}
+
+.chevron {
+  display: grid;
+  place-items: center;
+  margin: 0 -3px;
+}

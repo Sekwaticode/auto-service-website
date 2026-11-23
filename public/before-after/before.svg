@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+  <!-- PLACEHOLDER: replace with a real photo of a damaged car (save as before.jpg and update the src). -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3a3a3a"/>
+      <stop offset="1" stop-color="#1c1c1c"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <rect y="640" width="1200" height="260" fill="#141414"/>
+  <!-- dented car body -->
+  <path d="M190 600 L235 470 Q260 430 330 420 L420 410 L505 318 Q530 292 575 290 L760 288 Q810 290 842 322 L930 415 L1000 428 Q1040 440 1040 490 L1028 548 L1005 560 L988 600 Z"
+        fill="#5b5b5b" stroke="#2a2a2a" stroke-width="6"/>
+  <!-- crushed front corner -->
+  <path d="M190 600 L235 470 L300 500 L262 545 L318 568 L270 600 Z" fill="#474747" stroke="#2a2a2a" stroke-width="5"/>
+  <!-- cracked windows -->
+  <path d="M540 330 L585 312 L740 310 L770 330 L800 405 L560 405 Z" fill="#2c3238" stroke="#222" stroke-width="5"/>
+  <path d="M600 318 L640 362 L612 404 M640 362 L700 340 M640 362 L668 404" stroke="#9aa3ab" stroke-width="3" fill="none"/>
+  <!-- scrapes and dents -->
+  <path d="M330 470 Q380 500 440 470 M470 520 L560 500 L610 530" stroke="#8a8a8a" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M300 500 L262 545 M330 525 L300 570" stroke="#2a2a2a" stroke-width="4"/>
+  <!-- wheels -->
+  <circle cx="345" cy="605" r="70" fill="#1a1a1a"/><circle cx="345" cy="605" r="30" fill="#444"/>
+  <circle cx="875" cy="605" r="70" fill="#1a1a1a"/><circle cx="875" cy="605" r="30" fill="#444"/>
+  <!-- hanging bumper -->
+  <path d="M180 600 L215 640 L300 650" stroke="#6b6b6b" stroke-width="10" fill="none" stroke-linecap="round"/>
+  <text x="600" y="790" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#bdbdbd">Placeholder: add your “before” photo</text>
+</svg>
