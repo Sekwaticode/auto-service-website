@@ -14,8 +14,7 @@ export default function Home() {
     <main>
       <AutoHero />
       <AboutSection />
-            <RepairCta />
-
+     <RepairCta />
       <ServiceCards />
       <GoogleReviews />
       {/* ids are the targets of the hero's navigation links */}
