@@ -131,6 +131,10 @@
 }
 
 @layer base {
+  /* Section links land below the fixed navigation bar instead of underneath it. */
+  html {
+    scroll-padding-top: 6rem;
+  }
   * {
     @apply border-border outline-ring/50;
   }

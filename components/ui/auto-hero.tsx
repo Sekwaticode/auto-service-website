@@ -17,10 +17,10 @@ import heroImage from "@/public/hero-mechanic.jpg";
  * longer phrase wraps and leaves an empty line under the shorter ones.
  */
 const typedPhrases = [
-  "the car you rely on.",
-  "your daily drive.",
-  "family road trips.",
-  "the open road.",
+  "every dent.",
+  "every scratch.",
+  "accident damage.",
+  "a flawless finish.",
 ];
 const longestPhrase = typedPhrases.reduce((a, b) => (b.length > a.length ? b : a));
 
@@ -79,29 +79,16 @@ export default function AutoHero() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <section
-      className={cn(
-        display.variable,
-        mono.variable,
-        "relative isolate flex min-h-svh flex-col overflow-hidden bg-neutral-950 text-white [font-family:var(--font-display)]"
-      )}
-    >
-      {/* Background photo with overlays that keep the text readable */}
-      <Image
-        src={heroImage}
-        alt="Mechanic inspecting a car engine with a flashlight"
-        fill
-        preload
-        placeholder="blur"
-        sizes="100vw"
-        className="-z-20 object-cover object-[40%_center] lg:object-[70%_center]"
-      />
-      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-neutral-950/75 via-neutral-950/30 to-transparent" />
-      <div className="absolute inset-0 -z-10 bg-gradient-to-t from-neutral-950/95 via-neutral-950/10 to-neutral-950/35" />
-
-      {/* Navigation */}
-      <header className="relative z-20 px-4 pt-4 sm:px-6">
-        <nav className="mx-auto flex max-w-6xl items-center justify-between gap-4 rounded-2xl border border-white/40 bg-white/85 py-2 pr-2 pl-5 text-neutral-900 shadow-lg backdrop-blur-xl">
+    <>
+      {/* Navigation: fixed to the top of the screen on every section. It sits outside the hero
+          section, because inside it later sections would paint over it while scrolling. */}
+      <header
+        className={cn(
+          display.variable,
+          "pointer-events-none fixed inset-x-0 top-0 z-50 px-4 pt-4 sm:px-6 [font-family:var(--font-display)]"
+        )}
+      >
+        <nav className="pointer-events-auto mx-auto flex max-w-6xl items-center justify-between gap-4 rounded-2xl border border-white/40 bg-white/85 py-2 pr-2 pl-5 text-neutral-900 shadow-lg backdrop-blur-xl">
           <Link href="/" className="flex items-center gap-2 text-xl font-semibold tracking-tight">
             <span className="font-black tracking-[-0.2em] text-orange-500 italic">//</span>
             {business.name}
@@ -126,7 +113,7 @@ export default function AutoHero() {
               {business.phone}
             </a>
             <PillLink href="#booking" variant="dark" className="hidden sm:inline-flex">
-              Book a service
+              Get a quote
             </PillLink>
             <button
               type="button"
@@ -142,7 +129,7 @@ export default function AutoHero() {
 
         {/* Mobile menu */}
         {menuOpen && (
-          <div className="mx-auto mt-2 max-w-6xl rounded-2xl border border-white/40 bg-white/95 p-3 text-neutral-900 shadow-lg backdrop-blur-xl lg:hidden">
+          <div className="pointer-events-auto mx-auto mt-2 max-w-6xl rounded-2xl border border-white/40 bg-white/95 p-3 text-neutral-900 shadow-lg backdrop-blur-xl lg:hidden">
             <ul className="flex flex-col">
               {navLinks.map((link) => (
                 <li key={link.href}>
@@ -158,7 +145,7 @@ export default function AutoHero() {
             </ul>
             <div className="mt-2 flex flex-wrap items-center gap-3 border-t border-neutral-200 px-3 pt-4 pb-1">
               <PillLink href="#booking" variant="dark">
-                Book a service
+                Get a quote
               </PillLink>
               <a href={phoneHref} className="flex items-center gap-2 text-sm font-medium">
                 <Phone className="size-4" />
@@ -169,11 +156,31 @@ export default function AutoHero() {
         )}
       </header>
 
-      {/* Hero content */}
-      <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-1 flex-col justify-end gap-10 px-4 pt-24 pb-12 sm:px-6 md:pb-16 lg:flex-row lg:items-end lg:justify-between">
+    <section
+      className={cn(
+        display.variable,
+        mono.variable,
+        "relative isolate flex min-h-svh flex-col overflow-hidden bg-neutral-950 text-white [font-family:var(--font-display)]"
+      )}
+    >
+      {/* Background photo with overlays that keep the text readable */}
+      <Image
+        src={heroImage}
+        alt="Mechanic inspecting a car engine with a flashlight"
+        fill
+        preload
+        placeholder="blur"
+        sizes="100vw"
+        className="-z-20 object-cover object-[40%_center] lg:object-[70%_center]"
+      />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-neutral-950/75 via-neutral-950/30 to-transparent" />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-t from-neutral-950/95 via-neutral-950/10 to-neutral-950/35" />
+
+      {/* Hero content (top padding clears the fixed navigation) */}
+      <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-1 flex-col justify-end gap-10 px-4 pt-32 pb-12 sm:px-6 md:pb-16 lg:flex-row lg:items-end lg:justify-between">
         <div className="max-w-3xl">
           <p className="mb-5 text-xs font-medium tracking-[0.18em] text-white/75 uppercase [font-family:var(--font-mono-eyebrow)]">
-            Independent auto service · {business.location}
+            Panel beating &amp; spray painting · {business.location}
           </p>
           <h1 className="text-5xl leading-[0.95] font-semibold tracking-[-0.04em] text-balance sm:text-6xl lg:text-7xl xl:text-8xl">
             Expert hands for{" "}
@@ -202,11 +209,11 @@ export default function AutoHero() {
             </span>
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-pretty text-white/80">
-            Modern diagnostics, upfront quotes and certified mechanics who explain every repair before
-            they start, without the dealership wait.
+            From small dents to major collision damage, we straighten, repair and respray your car so it
+            looks like nothing ever happened. Clear quotes, and help with your insurance claim.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <PillLink href="#booking">Book a service</PillLink>
+            <PillLink href="#booking">Get a quote</PillLink>
             <PillLink href="#services" variant="ghost">
               Explore services
             </PillLink>
@@ -230,5 +237,6 @@ export default function AutoHero() {
         </div>
       </div>
     </section>
+    </>
   );
 }

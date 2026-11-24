@@ -14,10 +14,10 @@ import { cn } from "@/lib/utils";
 /* About image: null shows a placeholder. To use a photo, put it in /public */
 /* (e.g. /public/about-workshop.jpg) and set ABOUT_IMAGE to its path.       */
 /* ------------------------------------------------------------------------ */
-const ABOUT_IMAGE: string | null = null;
+const ABOUT_IMAGE: string | null = "/about-workshop.png";
 
 /** Lights up word by word as the visitor scrolls. */
-const text = `Too many garages leave you guessing: vague quotes, surprise bills and repairs you never agreed to. Getting your car fixed shouldn't feel like a gamble.`;
+const text = `After an accident you're left with insurance forms, vague quotes and paint that never quite matches. Getting your car back to how it was shouldn't be another headache.`;
 const words = text.split(" ");
 
 export default function AboutSection() {
@@ -50,10 +50,10 @@ export default function AboutSection() {
             {ABOUT_IMAGE ? (
               <Image
                 src={ABOUT_IMAGE}
-                alt={`The ${business.name} workshop and team`}
+                alt="Gloved hands cutting sheet metal on a workbench as sparks fly"
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
-                className="object-cover"
+                className="object-cover object-[62%_55%]"
               />
             ) : (
               <div className="absolute inset-0 grid place-items-center">

@@ -6,56 +6,56 @@ import { display, mono } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 
 /* ------------------------------------------------------------------------ */
-/* Service packages and prices: placeholders, replace with your own.        */
+/* Repair prices: placeholders, replace with your own.                      */
 /* ------------------------------------------------------------------------ */
 const pricingTiers = [
   {
-    name: "MINOR SERVICE",
-    description: "Routine care between major services, for cars in good shape",
-    price: "R1 499",
-    priceNote: "from, per service",
+    name: "DENT & SCRATCH",
+    description: "Small dents, door dings and surface scratches on a single panel",
+    price: "R950",
+    priceNote: "from, per panel",
     featured: false,
     features: [
-      "Engine oil and oil filter replaced",
-      "Fluid levels checked and topped up",
-      "Tyre pressure and tread check",
-      "Brake pad and disc inspection",
-      "Lights, wipers and battery check",
-      "Diagnostic scan for fault codes",
+      "Free assessment and written quote",
+      "Paintless dent removal where possible",
+      "Scratches filled, flattened and polished",
+      "Paint touched up to your colour code",
+      "Most jobs done the same day",
+      "Workmanship guarantee",
     ],
-    cta: "BOOK A MINOR SERVICE",
+    cta: "GET A QUOTE",
   },
   {
-    name: "FULL SERVICE",
-    description: "Our most popular package, recommended once a year",
-    price: "R2 899",
-    priceNote: "from, per service",
+    name: "PANEL RESPRAY",
+    description: "Our most requested repair: one panel repaired and resprayed",
+    price: "R2 800",
+    priceNote: "from, per panel",
     featured: true,
     features: [
-      "Everything in the minor service",
-      "Air and cabin filters replaced",
-      "Spark plugs checked or replaced",
-      "Brake fluid test",
-      "Suspension and steering check",
-      "Service book stamped to keep your warranty",
+      "Everything in dent & scratch",
+      "Panel straightened or filled and shaped",
+      "Computer colour match to factory paint",
+      "Booth-sprayed base coat and clear coat",
+      "Blended into neighbouring panels",
+      "Machine polish and full valet",
     ],
-    cta: "BOOK A FULL SERVICE",
+    cta: "GET A QUOTE",
   },
   {
-    name: "MAJOR SERVICE",
-    description: "Manufacturer-schedule service for higher mileage cars",
+    name: "ACCIDENT REPAIR",
+    description: "Collision damage across several panels, insured or private",
     price: "Get a quote",
-    priceNote: "priced for your make and model",
+    priceNote: "priced after we see the damage",
     featured: false,
     features: [
-      "Everything in the full service",
-      "Timing belt or chain inspection",
-      "Coolant and transmission fluid change",
-      "Fuel filter replaced",
-      "Full road test and report",
+      "Detailed quote for your insurer",
+      "Panels repaired or replaced",
+      "Chassis measured and straightened",
+      "Full or partial respray",
+      "Progress photos throughout the repair",
       "Courtesy car on request",
     ],
-    cta: "REQUEST A QUOTE",
+    cta: "BOOK AN ASSESSMENT",
   },
 ];
 
@@ -75,14 +75,14 @@ export default function PricingSection() {
               CLEAR, UPFRONT PRICING
             </p>
             <h2 className="font-normal text-3xl tracking-tight md:text-5xl">
-              Service packages for{" "}
-              <span className="text-gray-500">every car</span>
+              Repair prices for{" "}
+              <span className="text-gray-500">every kind of damage</span>
             </h2>
           </div>
           <div className="md:col-span-4 md:mt-auto">
             <p className="text-gray-500">
-              <span className="text-white">Fixed prices</span> on routine servicing, and a quote you
-              approve before any repair work starts
+              <span className="text-white">Guide prices</span> for small repairs, and a written quote
+              you approve before any work starts
             </p>
           </div>
         </div>
@@ -177,8 +177,8 @@ export default function PricingSection() {
         </div>
 
         <p className="px-4 text-center text-gray-500 text-sm md:px-10">
-          Prices include labour and standard parts for most cars. Repairs found during a service
-          are always quoted first.
+          Guide prices include labour and paint for most cars. Every repair is confirmed with a
+          written quote after we&apos;ve seen the damage.
         </p>
       </div>
     </div>

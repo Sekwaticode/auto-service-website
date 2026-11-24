@@ -1,3 +1,4 @@
+import Image, { type StaticImageData } from "next/image";
 import { Check, MoveHorizontal, Phone } from "lucide-react";
 
 import { PillLink } from "@/components/ui/auto-hero";
@@ -5,15 +6,33 @@ import ImageCompare from "@/components/ui/image-compare";
 import { business, phoneHref } from "@/lib/business";
 import { display, mono } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
+import carAfter from "@/public/before-after/car-after.png";
+import carBefore from "@/public/before-after/car-before.png";
 
-/* ------------------------------------------------------------------------ */
-/* Before/after photos. These are PLACEHOLDER drawings: replace them with   */
-/* two photos of the same car from the same angle, one before and one after */
-/* a real repair you did (e.g. put before.jpg and after.jpg in              */
-/* /public/before-after and change the paths below).                        */
-/* ------------------------------------------------------------------------ */
-const BEFORE_SRC = "/before-after/before.svg";
-const AFTER_SRC = "/before-after/after.svg";
+/**
+ * One side of the comparison: a cut-out car photo on a light studio backdrop.
+ * The backdrop is solid so the other photo never shows through the transparent
+ * areas, and both sides use the same one so only the car changes.
+ */
+function CarShot({ src, alt }: { src: StaticImageData; alt: string }) {
+  return (
+    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_40%,#ffffff_0%,#f1f1f1_55%,#dcdcdc_100%)]">
+      {/* floor shadow under the car */}
+      <div
+        aria-hidden="true"
+        className="absolute bottom-[9%] left-1/2 h-[9%] w-[76%] -translate-x-1/2 rounded-[50%] bg-black/25 blur-xl"
+      />
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        sizes="(min-width: 1024px) 680px, 100vw"
+        draggable={false}
+        className="pointer-events-none object-contain p-[5%] select-none"
+      />
+    </div>
+  );
+}
 
 const points = [
   "Panel beating and dent removal",
@@ -81,11 +100,21 @@ export default function RepairCta() {
         <div className="lg:col-span-7">
           <div className="rounded-[calc(var(--radius-panel)+0.5rem)] border border-neutral-200 bg-white p-2 shadow-xl shadow-neutral-900/10">
             <ImageCompare
-              before={<img src={BEFORE_SRC} alt="A car with a crushed front corner, dented panels and a cracked window before repair" />}
-              after={<img src={AFTER_SRC} alt="The same car after repair, with straight panels and fresh paint" />}
+              before={
+                <CarShot
+                  src={carBefore}
+                  alt="Red car after a head-on collision, with a crumpled bonnet, shattered windscreen and the front bumper torn off"
+                />
+              }
+              after={
+                <CarShot
+                  src={carAfter}
+                  alt="Red car after repair, with a straight bonnet, new grille and headlights, and glossy paint"
+                />
+              }
               labels={["Before", "After"]}
               label="Car before and after body repair"
-              aspectRatio="4 / 3"
+              aspectRatio="16 / 10"
               defaultPosition={50}
             />
           </div>

@@ -1,11 +1,11 @@
 import Link from "next/link";
 import {
-  BatteryCharging,
-  CalendarCheck,
-  Disc3,
-  Droplet,
-  ScanSearch,
-  Snowflake,
+  CarFront,
+  FileCheck,
+  Hammer,
+  Ruler,
+  Sparkles,
+  SprayCan,
   type LucideIcon,
 } from "lucide-react";
 
@@ -18,34 +18,34 @@ import "./service-cards.css";
 /* ------------------------------------------------------------------------ */
 export const services: { icon: LucideIcon; title: string; description: string }[] = [
   {
-    icon: ScanSearch,
-    title: "Diagnostics",
-    description: "Dealer-level scan tools find the cause of warning lights and odd noises, explained in plain language.",
+    icon: CarFront,
+    title: "Collision repair",
+    description: "Front, rear and side impact damage repaired properly, from crumpled panels to broken lights and grilles.",
   },
   {
-    icon: Disc3,
-    title: "Brakes",
-    description: "Pads, discs, calipers and fluid checked and replaced, so you stop straight and quietly every time.",
+    icon: Hammer,
+    title: "Panel beating",
+    description: "Dented and creased panels straightened and reshaped by hand, or replaced when repair isn't the right call.",
   },
   {
-    icon: Droplet,
-    title: "Oil & fluids",
-    description: "Oil and filter changes plus coolant, brake and transmission fluid to the manufacturer's schedule.",
+    icon: SprayCan,
+    title: "Spray painting",
+    description: "Full and partial resprays in a dust-free booth, colour matched to your car's factory paint code.",
   },
   {
-    icon: CalendarCheck,
-    title: "Scheduled servicing",
-    description: "Minor and major services that keep your warranty valid and your car running the way it should.",
+    icon: Sparkles,
+    title: "Dent & scratch removal",
+    description: "Hail dents, door dings and scratches removed, often without repainting, so your original finish stays.",
   },
   {
-    icon: BatteryCharging,
-    title: "Battery & electrical",
-    description: "Battery testing and replacement, alternators, starters and wiring faults traced and fixed.",
+    icon: Ruler,
+    title: "Chassis straightening",
+    description: "Frames measured and pulled back to factory specification after a serious accident, so the car drives true.",
   },
   {
-    icon: Snowflake,
-    title: "Air conditioning",
-    description: "Re-gassing, leak tests and repairs to get your cabin cool again before the heat arrives.",
+    icon: FileCheck,
+    title: "Insurance claims",
+    description: "We assess the damage, prepare the quote your insurer needs and keep you updated until the car is ready.",
   },
 ];
 
@@ -66,11 +66,11 @@ export default function ServiceCards() {
               What we do
             </p>
             <h2 className="text-4xl leading-[1.05] font-semibold tracking-[-0.03em] text-balance md:text-5xl">
-              Every job, from oil change to overhaul.
+              Every repair, from door dings to write-off scares.
             </h2>
           </div>
           <p className="text-lg leading-relaxed text-white/60 md:col-span-5">
-            One workshop for routine servicing and the repairs you didn&apos;t plan for, on every make and model.
+            One body shop for minor scrapes and major accident damage, on every make and model.
           </p>
         </div>
 
@@ -88,7 +88,7 @@ export default function ServiceCards() {
                 <h3>{title}</h3>
                 <p>{description}</p>
                 <Link href="#booking" className="service-card__btn">
-                  Book this service <span aria-hidden="true">→</span>
+                  Get a quote <span aria-hidden="true">→</span>
                   <span className="sr-only">: {title}</span>
                 </Link>
               </div>

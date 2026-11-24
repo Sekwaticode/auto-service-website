@@ -16,37 +16,37 @@ const reviews = [
     name: "Sam P.",
     date: "2 weeks ago",
     rating: 5,
-    body: "Dashboard light came on before a long trip. They found the fault the same morning, showed me the worn part and had me back on the road by lunch.",
+    body: "Someone reversed into my door in a parking lot. You honestly can't tell where the dent was, and the paint matches perfectly.",
   },
   {
     name: "Thandi M.",
     date: "1 month ago",
     rating: 5,
-    body: "Clear quote up front and the final bill matched it exactly. No upselling, just honest advice about what needed doing now and what could wait.",
+    body: "They handled the whole insurance claim for me after my accident. Clear quote, regular updates, and the car came back looking brand new.",
   },
   {
     name: "Daniel K.",
     date: "1 month ago",
     rating: 5,
-    body: "Brakes were squealing for weeks. Booked online, dropped the car off before work and it was ready the same afternoon. Smooth and quiet now.",
+    body: "Hail left my bonnet and roof covered in dents. They removed them without a respray and the original finish looks perfect.",
   },
   {
     name: "Aisha R.",
     date: "2 months ago",
     rating: 5,
-    body: "Friendly team who explained everything without the jargon. My aircon blows cold again and the price was fair. Will be back for my next service.",
+    body: "Cracked bumper and a scraped wing from a low wall. Repaired and resprayed in two days for less than I expected.",
   },
   {
     name: "Pieter V.",
     date: "3 months ago",
     rating: 5,
-    body: "Took my car in for its major service. They kept me updated with photos and finished on time. Much better experience than the dealership.",
+    body: "Front-end collision that I thought was a write-off. They straightened the chassis and rebuilt the front, and it drives perfectly.",
   },
   {
     name: "Lerato N.",
     date: "3 months ago",
     rating: 4,
-    body: "Battery died on a Monday morning. They squeezed me in, tested the alternator too, and had a new battery fitted within the hour.",
+    body: "Friendly team who sent photos at every stage of the repair. Took a day longer than planned, but the finish is flawless.",
   },
 ];
 
@@ -160,7 +160,7 @@ export default function TestimonialMarqueeDemo() {
         </div>
         <div className="flex flex-col items-start gap-4 md:col-span-5">
           <p className="text-lg leading-relaxed text-neutral-600">
-            Real feedback from customers who have had their cars serviced and repaired with us.
+            Real feedback from customers whose cars we have repaired and resprayed.
           </p>
           <a
             href={GOOGLE_REVIEWS_URL}

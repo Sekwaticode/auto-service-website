@@ -1,18 +1,22 @@
 import type { Metadata } from "next";
 
+import WhatsAppButton from "@/components/ui/whatsapp-button";
 import { business } from "@/lib/business";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: `${business.name} | Car Servicing & Repairs in ${business.location}`,
+  title: `${business.name} | Panel Beating & Spray Painting in ${business.location}`,
   description:
-    "Independent car service and repair workshop: diagnostics, brakes, servicing, batteries and air conditioning. Upfront prices and online booking.",
+    "Panel beaters for dents, scratches and accident damage: collision repair, spray painting, bumper repairs and insurance claims. Clear quotes and online booking.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {children}
+        <WhatsAppButton />
+      </body>
     </html>
   );
 }

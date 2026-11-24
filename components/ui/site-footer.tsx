@@ -36,7 +36,7 @@ const pageLinks = [
   { label: "Services", href: "#services" },
   { label: "Our results", href: "#results" },
   { label: "Google reviews", href: "#reviews" },
-  { label: "Book a service", href: "#booking" },
+  { label: "Get a quote", href: "#booking" },
   { label: "Pricing", href: "#pricing" },
 ];
 
@@ -78,7 +78,7 @@ export default function SiteFooter() {
             </h2>
           </div>
           <div className="flex flex-wrap items-center gap-3">
-            <PillLink href="#booking">Book a service</PillLink>
+            <PillLink href="#booking">Get a quote</PillLink>
             <a
               href={phoneHref}
               className="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-3.5 text-sm font-medium transition-colors hover:border-white/40 hover:bg-white/5"
@@ -97,8 +97,8 @@ export default function SiteFooter() {
               {business.name}
             </Link>
             <p className="mt-4 max-w-xs leading-relaxed text-white/60">
-              Independent car servicing and repairs in {business.location}. Upfront quotes, certified
-              mechanics and no dealership wait.
+              Panel beating, spray painting and accident repairs in {business.location}. Clear quotes, skilled
+              panel beaters and a finish you can&apos;t tell from new.
             </p>
             <a
               href="#reviews"
@@ -136,7 +136,7 @@ export default function SiteFooter() {
           </nav>
 
           <div className="sm:col-span-2 lg:col-span-4">
-            <ColumnTitle>Visit the workshop</ColumnTitle>
+            <ColumnTitle>Visit the body shop</ColumnTitle>
             <ul className="space-y-4 text-white/70">
               <li className="flex gap-3">
                 <MapPin className="mt-0.5 size-5 shrink-0 text-orange-500" />
@@ -186,7 +186,7 @@ export default function SiteFooter() {
             © {year} {business.name}. All rights reserved.
           </p>
           <p className="[font-family:var(--font-mono-eyebrow)] text-xs tracking-[0.14em] uppercase">
-            Independent auto service · {business.location}
+            Panel beating &amp; spray painting · {business.location}
           </p>
           <a href="#" className="group inline-flex items-center gap-2 transition-colors hover:text-white">
             Back to top

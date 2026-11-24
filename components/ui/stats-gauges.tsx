@@ -15,19 +15,19 @@ const stats = [
     value: 98,
     label: "Satisfied",
     title: "Customer satisfaction",
-    description: "Drivers who rate their visit 4 stars or higher.",
+    description: "Drivers who rate their repair 4 stars or higher.",
   },
   {
-    value: 95,
-    label: "First time",
-    title: "Fixed right first time",
-    description: "Repairs that need no follow-up visit for the same problem.",
+    value: 99,
+    label: "Colour match",
+    title: "Paint matched first time",
+    description: "Resprays that blend with the rest of the car without a second attempt.",
   },
   {
-    value: 87,
-    label: "Same day",
-    title: "Same-day turnaround",
-    description: "Services and repairs finished and ready on the day you drop off.",
+    value: 94,
+    label: "On time",
+    title: "Ready when promised",
+    description: "Repairs handed back on or before the date we quoted.",
   },
 ];
 
@@ -60,7 +60,7 @@ export default function StatsGauges() {
             </h2>
           </div>
           <p className="text-lg leading-relaxed text-neutral-600 md:col-span-5">
-            We track every job, so you know what to expect before you hand over your keys.
+            We track every repair, so you know what to expect before you hand over your keys.
           </p>
         </div>
 

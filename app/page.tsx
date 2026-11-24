@@ -19,7 +19,7 @@ export default function Home() {
       <GoogleReviews />
       {/* ids are the targets of the hero's navigation links */}
       <section id="booking" className="scroll-mt-4">
-        <SectionHeading title="Book a service" tagline="Pick a time" />
+        <SectionHeading title="Get a quote" tagline="Book an assessment" />
         <OpenSlotBookingDemo />
       </section>
       <section id="pricing" className="scroll-mt-4">

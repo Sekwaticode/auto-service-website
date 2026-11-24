@@ -40,19 +40,19 @@ export default function Demo() {
   return (
     <div className="w-full">
       <OpenSlotBooking
-        headline="Book your car in."
-        headlineAccent="Pick a drop-off time."
-        description="Choose a slot for a service, repair or diagnostic check. Tell us what you've noticed and we'll call with a quote before any work starts."
+        headline="Get your car assessed."
+        headlineAccent="Pick a time for a quote."
+        description="Bring your car in and we'll inspect the damage, take photos and give you a written repair quote, ready for your insurer if you're claiming."
         altContact={{ label: `Rather call? ${business.phone}`, href: phoneHref }}
-        host={{ name: `${business.name} Workshop`, initials: "AC", role: "Service desk", stamp: "Drop-off slots · car service · " }}
-        meetingTitle="Car service drop-off"
-        agenda="Bring your car in at this time. We'll check it over, call you with a quote and only start work once you've approved it."
+        host={{ name: `${business.name} Body Shop`, initials: "AC", role: "Quotes & assessments", stamp: "Damage assessment · repair quote · " }}
+        meetingTitle="Damage assessment & quote"
+        agenda="Bring your car in at this time. We'll inspect the damage with you, explain what needs repairing and send a written quote. Work only starts once you've approved it."
         location={business.address}
         responseNote="We'll confirm your booking by email"
-        bookingUrl={`${business.website}/book`}
-        durations={[60, 120, 240]}
-        defaultDuration={60}
-        step={60}
+        bookingUrl={`${business.website}/quote`}
+        durations={[30, 60]}
+        defaultDuration={30}
+        step={30}
         hostTimeZone={business.timeZone}
         timeZones={[business.timeZone]}
         hours={business.hours}
@@ -63,10 +63,10 @@ export default function Demo() {
         colors={orange}
         theme="light"
         labels={{
-          pick: "Choose a drop-off time",
+          pick: "Choose an assessment time",
           howLong: "Time needed",
           email: "Email",
-          note: "What does your car need? Make, model and anything you've noticed",
+          note: "What happened? Make, model, where the damage is, and your insurer if you're claiming",
           booked: "You're booked in.",
           invite: "Your confirmation is on its way to {email}.",
           empty: "The workshop is full this week.",
